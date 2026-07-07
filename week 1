@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Mobile Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 align="center">Online Mobile Store</h1>
+
+<table border="1" align="center" cellpadding="10">
+    <tr>
+        <th>Mobile</th>
+        <th>Details</th>
+    </tr>
+
+    <tr>
+        <td>Samsung Galaxy S24</td>
+        <td><a href="samsung.html">Click Here</a></td>
+    </tr>
+
+    <tr>
+        <td>iPhone 15</td>
+        <td><a href="iphone.html">Click Here</a></td>
+    </tr>
+</table>
+
+</body>
+</html>
