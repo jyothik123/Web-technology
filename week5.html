@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Registration Form</title>
+
+    <script>
+    function validateForm()
+    {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+
+        var namePattern = /^[A-Za-z ]+$/;
+        var emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        var phonePattern = /^[0-9]{10}$/;
+
+        if(!namePattern.test(name))
+        {
+            alert("Invalid Name");
+            return false;
+        }
+
+        if(!emailPattern.test(email))
+        {
+            alert("Invalid Email");
+            return false;
+        }
+
+        if(!phonePattern.test(phone))
+        {
+            alert("Invalid Contact Number");
+            return false;
+        }
+
+        alert("Registered Successfully");
+        return true;
+    }
+    </script>
+
+</head>
+
+<body>
+
+<h2 align="center">Job Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+<label>Name:</label><br>
+<input type="text" id="name"><br><br>
+
+<label>Gender:</label><br>
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<br><br>
+
+<label>Languages Known:</label><br>
+<input type="checkbox"> English
+<input type="checkbox"> Telugu
+<input type="checkbox"> Hindi
+<br><br>
+
+<label>Email:</label><br>
+<input type="text" id="email"><br><br>
+
+<label>Contact Number:</label><br>
+<input type="text" id="phone"><br><br>
+
+<label>Address:</label><br>
+<textarea rows="4" cols="30"></textarea><br><br>
+
+<label>Job Location:</label><br>
+<select>
+    <option>Hyderabad</option>
+    <option>Bangalore</option>
+    <option>Chennai</option>
+    <option>Pune</option>
+</select>
+
+<br><br>
+
+<label>About Yourself:</label><br>
+<textarea rows="5" cols="30"></textarea><br><br>
+
+<label>Upload CV:</label><br>
+<input type="file"><br><br>
+
+<input type="submit" value="Register">
+<input type="reset" value="Clear">
+
+</form>
+
+</body>
+</html>
