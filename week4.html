@@ -1,0 +1,61 @@
+index.html:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Loan Form</title>
+    <script src="script.js"></script>
+</head>
+<body>
+
+<h2 align="center">Bank Loan Application Form</h2>
+
+<form onsubmit="return calculateEMI()">
+
+<label>Name:</label><br>
+<input type="text" id="name" required><br><br>
+
+<label>Occupation:</label><br>
+<input type="text" id="occupation" required><br><br>
+
+<label>Loan Amount:</label><br>
+<input type="number" id="loan" required><br><br>
+
+<label>Rate of Interest (%):</label><br>
+<input type="number" id="rate" required><br><br>
+
+<label>Tenure (Years):</label><br>
+<input type="number" id="years" required><br><br>
+
+<input type="submit" value="Calculate EMI">
+<input type="reset" value="Clear">
+
+</form>
+
+<h3 id="result"></h3>
+
+</body>
+</html>
+
+script.js:
+
+
+function calculateEMI()
+{
+    var name = document.getElementById("name").value;
+    var loan = parseFloat(document.getElementById("loan").value);
+    var rate = parseFloat(document.getElementById("rate").value);
+    var years = parseFloat(document.getElementById("years").value);
+
+    var monthlyRate = rate / 12 / 100;
+    var months = years * 12;
+
+    var emi = (loan * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+              (Math.pow(1 + monthlyRate, months) - 1);
+
+    document.getElementById("result").innerHTML =
+    "Customer Name : " + name + "<br>" +
+    "Monthly EMI : ₹" + emi.toFixed(2);
+
+    return false;
+}
